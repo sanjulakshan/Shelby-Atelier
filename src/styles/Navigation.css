@@ -1,0 +1,141 @@
+.navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-ivory);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 251, 247, 0.95);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+}
+
+.logo-subtext {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-top: -0.25rem;
+  color: var(--color-gold);
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-icon-btn {
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-icon-btn:hover {
+  color: var(--color-gold);
+}
+
+.nav-menu-btn {
+  display: none;
+  background: none;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--color-ivory);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-menu.active {
+    max-height: 600px;
+  }
+
+  .nav-link {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-menu-btn {
+    display: flex;
+  }
+
+  .nav-icons {
+    gap: 1rem;
+  }
+}
