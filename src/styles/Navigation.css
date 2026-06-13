@@ -100,7 +100,7 @@
   padding: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-container {
     padding: 1rem 1.5rem;
   }
@@ -113,13 +113,15 @@
     flex-direction: column;
     gap: 0;
     background-color: var(--color-ivory);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.35s ease;
+    z-index: 999;
   }
 
   .nav-menu.active {
-    max-height: 600px;
+    max-height: 700px;
   }
 
   .nav-link {

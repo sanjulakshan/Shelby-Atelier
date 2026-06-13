@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import NewArrivals from './pages/NewArrivals'
 import Collections from './pages/Collections'
@@ -16,6 +18,7 @@ import Contact from './pages/Contact'
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,6 +34,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      <WhatsAppButton />
     </Router>
   )
 }
