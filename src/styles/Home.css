@@ -507,9 +507,17 @@
 }
 
 @media (max-width: 768px) {
+  .categories-section {
+    padding: 4rem 1.5rem;
+  }
+
   .categories-grid {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
+
+  .arrivals-section {
+    padding: 4rem 1.5rem 5rem;
   }
 
   .arrivals-grid {
@@ -531,13 +539,30 @@
     display: none;
   }
 
+  .lookbook-teaser {
+    padding: 6rem 1.5rem;
+  }
+
   .stats-section {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item {
+    padding: 2.5rem 1.5rem;
   }
 
   .hero-cta {
     flex-direction: column;
     align-items: center;
+  }
+
+  .btn-primary,
+  .btn-ghost,
+  .btn-outline {
+    padding: 0.9rem 2rem;
+    width: 100%;
+    justify-content: center;
+    max-width: 320px;
   }
 }
 

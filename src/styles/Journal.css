@@ -180,12 +180,18 @@
   }
 }
 
+@media (max-width: 768px) {
+  .journal-featured {
+    padding: 3rem 1.5rem;
+  }
+
+  .journal-grid-section {
+    padding: 4rem 1.5rem 5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .journal-grid {
     grid-template-columns: 1fr;
-  }
-
-  .journal-featured {
-    padding: 3rem 1.5rem;
   }
 }

@@ -5,15 +5,24 @@ import '../styles/CollectionPage.css'
 const filters = ['All', 'Gowns', 'Kaftans', 'Co-ords', 'Jumpsuits']
 
 const products = [
-  { id: 1, name: 'Golden Hour Gown', price: 'AED 5,800', category: 'Gowns', isNew: true, gradient: 'linear-gradient(160deg, #3d2b1f 0%, #5c3d28 50%, #2d1f12 100%)' },
-  { id: 2, name: 'Pearl Embroidered Gown', price: 'AED 5,200', category: 'Gowns', isNew: true, gradient: 'linear-gradient(160deg, #2a2520 0%, #3d352e 50%, #1f1a16 100%)' },
-  { id: 3, name: 'Golden Veil Kaftan', price: 'AED 3,800', category: 'Kaftans', isNew: true, gradient: 'linear-gradient(160deg, #c8a870 0%, #e8c890 50%, #b89860 100%)' },
-  { id: 4, name: 'Champagne Silk Kaftan', price: 'AED 3,200', category: 'Kaftans', isNew: false, gradient: 'linear-gradient(160deg, #d4c8a8 0%, #e8dcc0 50%, #c4b898 100%)' },
-  { id: 5, name: 'Noir Crystal Co-ord', price: 'AED 4,100', category: 'Co-ords', isNew: true, gradient: 'linear-gradient(160deg, #0d0b08 0%, #1a1510 50%, #0d0b08 100%)' },
-  { id: 6, name: 'Burgundy Velvet Gown', price: 'AED 6,400', category: 'Gowns', isNew: false, gradient: 'linear-gradient(160deg, #3d0f0f 0%, #5c1a1a 50%, #2d0d0d 100%)' },
-  { id: 7, name: 'Ivory Feather Trim Gown', price: 'AED 7,200', category: 'Gowns', isNew: false, gradient: 'linear-gradient(160deg, #e0d8d0 0%, #f0e8e0 50%, #d0c8c0 100%)' },
-  { id: 8, name: 'Emerald Wrap Kaftan', price: 'AED 2,900', category: 'Kaftans', isNew: false, gradient: 'linear-gradient(160deg, #0f2d1a 0%, #1a3d28 50%, #0d2015 100%)' },
-  { id: 9, name: 'Midnight Jumpsuit', price: 'AED 3,500', category: 'Jumpsuits', isNew: true, gradient: 'linear-gradient(160deg, #1a1a2a 0%, #2d2d3d 50%, #1a1a2a 100%)' },
+  { id: 1, name: 'Golden Hour Gown', price: 'AED 5,800', category: 'Gowns', isNew: true,
+    image: 'https://images.unsplash.com/photo-1771774470158-2b18c74757f1?w=400&h=550&fit=crop&q=80' },
+  { id: 2, name: 'Pearl Embroidered Gown', price: 'AED 5,200', category: 'Gowns', isNew: true,
+    image: 'https://images.unsplash.com/photo-1776841818478-16dbaba4001a?w=400&h=550&fit=crop&q=80' },
+  { id: 3, name: 'Golden Veil Kaftan', price: 'AED 3,800', category: 'Kaftans', isNew: true,
+    image: 'https://images.unsplash.com/photo-1774460699436-c408cc1408c3?w=400&h=550&fit=crop&q=80' },
+  { id: 4, name: 'Champagne Silk Kaftan', price: 'AED 3,200', category: 'Kaftans', isNew: false,
+    image: 'https://images.unsplash.com/photo-1776841818483-700f88aace44?w=400&h=550&fit=crop&q=80' },
+  { id: 5, name: 'Noir Crystal Co-ord', price: 'AED 4,100', category: 'Co-ords', isNew: true,
+    image: 'https://images.unsplash.com/photo-1764998112680-2f617dc9be40?w=400&h=550&fit=crop&q=80' },
+  { id: 6, name: 'Burgundy Velvet Gown', price: 'AED 6,400', category: 'Gowns', isNew: false,
+    image: 'https://images.unsplash.com/photo-1770045517872-73c5301fa137?w=400&h=550&fit=crop&q=80' },
+  { id: 7, name: 'Ivory Feather Trim Gown', price: 'AED 7,200', category: 'Gowns', isNew: false,
+    image: 'https://images.unsplash.com/photo-1756483492038-974f2a2ff341?w=400&h=550&fit=crop&q=80' },
+  { id: 8, name: 'Emerald Wrap Kaftan', price: 'AED 2,900', category: 'Kaftans', isNew: false,
+    image: 'https://images.unsplash.com/photo-1768767112566-dc12dbe40aae?w=400&h=550&fit=crop&q=80' },
+  { id: 9, name: 'Midnight Jumpsuit', price: 'AED 3,500', category: 'Jumpsuits', isNew: true,
+    image: 'https://images.unsplash.com/photo-1776841819019-999c928d9928?w=400&h=550&fit=crop&q=80' },
 ]
 
 const fadeUp = {
@@ -29,7 +38,7 @@ export default function EveningWear() {
   return (
     <main className="collection-page">
       <div className="page-hero">
-        <div className="page-hero-bg" style={{ background: 'linear-gradient(135deg, #2d1f12 0%, #1a1208 50%, #3d2b1f 100%)' }} />
+        <div className="page-hero-bg" style={{ backgroundImage: 'linear-gradient(rgba(26,18,8,0.72), rgba(45,31,18,0.72)), url(https://images.unsplash.com/photo-1776841818483-700f88aace44?w=1920&h=800&fit=crop&q=80)', backgroundSize: 'cover', backgroundPosition: 'center top' }} />
         <div className="page-hero-content">
           <motion.span
             className="section-label"
@@ -83,7 +92,7 @@ export default function EveningWear() {
               variants={fadeUp}
               layout
             >
-              <div className="product-image" style={{ background: product.gradient }}>
+              <div className="product-image" style={{ backgroundImage: `url(${product.image})`, backgroundSize: 'cover', backgroundPosition: 'center top' }}>
                 <div className="product-overlay">
                   <button className="quick-view-btn">Quick View</button>
                 </div>

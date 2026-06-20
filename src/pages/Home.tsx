@@ -4,17 +4,25 @@ import { ArrowRight, ChevronDown } from 'lucide-react'
 import '../styles/Home.css'
 
 const categories = [
-  { title: 'Abayas', subtitle: 'Timeless Elegance', path: '/abayas', accent: '#d4af37' },
-  { title: 'Evening Wear', subtitle: 'Luminous Nights', path: '/evening-wear', accent: '#c8b4a0' },
-  { title: 'Resort', subtitle: 'Sun-kissed Luxury', path: '/resort-collection', accent: '#b8a898' },
-  { title: 'Bespoke', subtitle: 'Made For You', path: '/bespoke-services', accent: '#d4af37' },
+  { title: 'Abayas', subtitle: 'Timeless Elegance', path: '/abayas', accent: 'rgba(212,175,55,0.18)',
+    image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&h=800&fit=crop&q=80' },
+  { title: 'Evening Wear', subtitle: 'Luminous Nights', path: '/evening-wear', accent: 'rgba(200,180,160,0.15)',
+    image: 'https://images.unsplash.com/photo-1776841818483-700f88aace44?w=600&h=800&fit=crop&q=80' },
+  { title: 'Resort', subtitle: 'Sun-kissed Luxury', path: '/resort-collection', accent: 'rgba(184,168,152,0.15)',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=800&fit=crop&q=80' },
+  { title: 'Bespoke', subtitle: 'Made For You', path: '/bespoke-services', accent: 'rgba(212,175,55,0.18)',
+    image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&h=800&fit=crop&q=80' },
 ]
 
 const newArrivals = [
-  { id: 1, name: 'Midnight Silk Abaya', price: 'AED 2,400', category: 'Abayas', gradient: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)' },
-  { id: 2, name: 'Golden Veil Kaftan', price: 'AED 3,800', category: 'Evening Wear', gradient: 'linear-gradient(135deg, #3d2b1f 0%, #5c3d28 50%, #2d1f12 100%)' },
-  { id: 3, name: 'Pearl Embroidered Gown', price: 'AED 5,200', category: 'Evening Wear', gradient: 'linear-gradient(135deg, #2a2520 0%, #3d352e 50%, #1f1a16 100%)' },
-  { id: 4, name: 'Linen Resort Dress', price: 'AED 1,650', category: 'Resort', gradient: 'linear-gradient(135deg, #c8b4a0 0%, #e8d8c8 50%, #b8a090 100%)' },
+  { id: 1, name: 'Midnight Silk Abaya', price: 'AED 2,400', category: 'Abayas',
+    image: 'https://images.unsplash.com/photo-1772474500365-c2c520545f44?w=400&h=550&fit=crop&q=80' },
+  { id: 2, name: 'Golden Veil Kaftan', price: 'AED 3,800', category: 'Evening Wear',
+    image: 'https://images.unsplash.com/photo-1774460699436-c408cc1408c3?w=400&h=550&fit=crop&q=80' },
+  { id: 3, name: 'Pearl Embroidered Gown', price: 'AED 5,200', category: 'Evening Wear',
+    image: 'https://images.unsplash.com/photo-1776841818478-16dbaba4001a?w=400&h=550&fit=crop&q=80' },
+  { id: 4, name: 'Linen Resort Dress', price: 'AED 1,650', category: 'Resort',
+    image: 'https://images.unsplash.com/photo-1767451629607-d368381d1e4c?w=400&h=550&fit=crop&q=80' },
 ]
 
 const fadeUp = {
@@ -32,6 +40,11 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="hero-bg">
+          <img
+            src="https://images.unsplash.com/photo-1772474587292-08b3e8932acd?w=1920&h=1080&fit=crop&q=80"
+            alt=""
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          />
           <div className="hero-overlay" />
         </div>
         <div className="hero-content">
@@ -105,7 +118,7 @@ export default function Home() {
           {categories.map((cat) => (
             <motion.div key={cat.title} variants={fadeUp}>
               <Link to={cat.path} className="category-card">
-                <div className="category-image" style={{ '--accent': cat.accent } as React.CSSProperties} />
+                <div className="category-image" style={{ '--accent': cat.accent, backgroundImage: `url(${cat.image})`, backgroundSize: 'cover', backgroundPosition: 'center top' } as React.CSSProperties} />
                 <div className="category-info">
                   <p className="category-subtitle">{cat.subtitle}</p>
                   <h3 className="category-title">{cat.title}</h3>
@@ -141,7 +154,7 @@ export default function Home() {
         >
           {newArrivals.map((item) => (
             <motion.div key={item.id} className="arrival-card" variants={fadeUp}>
-              <div className="arrival-image" style={{ background: item.gradient }}>
+              <div className="arrival-image" style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center top' }}>
                 <div className="arrival-image-overlay">
                   <button className="quick-view-btn">Quick View</button>
                 </div>
@@ -176,6 +189,7 @@ export default function Home() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1753162657110-753418a3840b?w=700&h=900&fit=crop&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         <motion.div
           className="brand-story-content"

@@ -7,7 +7,7 @@ const featured = {
   category: 'Culture & Craft',
   date: 'December 2024',
   readTime: '8 min read',
-  gradient: 'linear-gradient(160deg, #1a1510 0%, #2d2218 50%, #1a1510 100%)',
+  image: 'https://images.unsplash.com/photo-1772474587292-08b3e8932acd?w=900&h=600&fit=crop&q=80',
 }
 
 const articles = [
@@ -18,7 +18,7 @@ const articles = [
     category: 'Behind the Scenes',
     date: 'November 2024',
     readTime: '5 min read',
-    gradient: 'linear-gradient(160deg, #3d2b1f 0%, #5c3d28 50%, #2d1f12 100%)',
+    image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&h=400&fit=crop&q=80',
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const articles = [
     category: 'Editorial',
     date: 'October 2024',
     readTime: '6 min read',
-    gradient: 'linear-gradient(160deg, #1a1a2a 0%, #2d2d3d 50%, #1a1a2a 100%)',
+    image: 'https://images.unsplash.com/photo-1736342182213-6c037467cb38?w=600&h=400&fit=crop&q=80',
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const articles = [
     category: 'Style Guide',
     date: 'September 2024',
     readTime: '4 min read',
-    gradient: 'linear-gradient(160deg, #c8b4a0 0%, #e8d8c8 50%, #b8a090 100%)',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop&q=80',
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const articles = [
     category: 'Behind the Scenes',
     date: 'August 2024',
     readTime: '7 min read',
-    gradient: 'linear-gradient(160deg, #0d0b08 0%, #1a1510 50%, #0d0b08 100%)',
+    image: 'https://images.unsplash.com/photo-1770910195240-ddec777b77f6?w=600&h=400&fit=crop&q=80',
   },
   {
     id: 5,
@@ -54,7 +54,7 @@ const articles = [
     category: 'Culture & Craft',
     date: 'July 2024',
     readTime: '6 min read',
-    gradient: 'linear-gradient(160deg, #2d1f12 0%, #3d2b1f 50%, #1a1208 100%)',
+    image: 'https://images.unsplash.com/photo-1772474578035-bebcd90b355d?w=600&h=400&fit=crop&q=80',
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ const articles = [
     category: 'Style Guide',
     date: 'June 2024',
     readTime: '5 min read',
-    gradient: 'linear-gradient(160deg, #c8a870 0%, #e8c890 50%, #b89860 100%)',
+    image: 'https://images.unsplash.com/photo-1760083545495-b297b1690672?w=600&h=400&fit=crop&q=80',
   },
 ]
 
@@ -115,7 +115,7 @@ export default function Journal() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="featured-image" style={{ background: featured.gradient }}>
+          <div className="featured-image" style={{ backgroundImage: `url(${featured.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <span className="featured-label">Featured</span>
           </div>
           <div className="featured-content">
@@ -146,7 +146,7 @@ export default function Journal() {
               viewport={{ once: true }}
               variants={fadeUp}
             >
-              <div className="article-image" style={{ background: article.gradient }} />
+              <div className="article-image" style={{ backgroundImage: `url(${article.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
               <div className="article-content">
                 <div className="article-meta">
                   <span className="article-category">{article.category}</span>

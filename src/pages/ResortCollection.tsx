@@ -5,14 +5,22 @@ import '../styles/CollectionPage.css'
 const filters = ['All', 'Dresses', 'Co-ords', 'Tops', 'Cover-Ups']
 
 const products = [
-  { id: 1, name: 'Linen Resort Dress', price: 'AED 1,650', category: 'Dresses', isNew: true, gradient: 'linear-gradient(160deg, #c8b4a0 0%, #e8d8c8 50%, #b8a090 100%)' },
-  { id: 2, name: 'Azure Resort Co-ord', price: 'AED 1,900', category: 'Co-ords', isNew: false, gradient: 'linear-gradient(160deg, #8090a8 0%, #a0b0c0 50%, #707890 100%)' },
-  { id: 3, name: 'Saffron Silk Dress', price: 'AED 2,100', category: 'Dresses', isNew: true, gradient: 'linear-gradient(160deg, #c87020 0%, #e09040 50%, #b86010 100%)' },
-  { id: 4, name: 'White Eyelet Cover-Up', price: 'AED 980', category: 'Cover-Ups', isNew: false, gradient: 'linear-gradient(160deg, #f0ede8 0%, #faf8f4 50%, #e0ddd8 100%)' },
-  { id: 5, name: 'Terracotta Wrap Dress', price: 'AED 1,750', category: 'Dresses', isNew: true, gradient: 'linear-gradient(160deg, #a04030 0%, #c05040 50%, #903020 100%)' },
-  { id: 6, name: 'Aqua Silk Co-ord', price: 'AED 2,200', category: 'Co-ords', isNew: false, gradient: 'linear-gradient(160deg, #50a090 0%, #70c0b0 50%, #408070 100%)' },
-  { id: 7, name: 'Blush Printed Top', price: 'AED 650', category: 'Tops', isNew: false, gradient: 'linear-gradient(160deg, #e8b0c0 0%, #f8d0d8 50%, #d8a0b0 100%)' },
-  { id: 8, name: 'Ivory Crochet Cover-Up', price: 'AED 1,100', category: 'Cover-Ups', isNew: true, gradient: 'linear-gradient(160deg, #e8e0d8 0%, #f8f0e8 50%, #d8d0c8 100%)' },
+  { id: 1, name: 'Linen Resort Dress', price: 'AED 1,650', category: 'Dresses', isNew: true,
+    image: 'https://images.unsplash.com/photo-1767451629607-d368381d1e4c?w=400&h=550&fit=crop&q=80' },
+  { id: 2, name: 'Azure Resort Co-ord', price: 'AED 1,900', category: 'Co-ords', isNew: false,
+    image: 'https://images.unsplash.com/photo-1759825413444-e7bd2dab7091?w=400&h=550&fit=crop&q=80' },
+  { id: 3, name: 'Saffron Silk Dress', price: 'AED 2,100', category: 'Dresses', isNew: true,
+    image: 'https://images.unsplash.com/photo-1773777498906-bfd9f2271ee1?w=400&h=550&fit=crop&q=80' },
+  { id: 4, name: 'White Eyelet Cover-Up', price: 'AED 980', category: 'Cover-Ups', isNew: false,
+    image: 'https://images.unsplash.com/photo-1777545151770-000221c89fde?w=400&h=550&fit=crop&q=80' },
+  { id: 5, name: 'Terracotta Wrap Dress', price: 'AED 1,750', category: 'Dresses', isNew: true,
+    image: 'https://images.unsplash.com/photo-1763559038700-a4dd423bafba?w=400&h=550&fit=crop&q=80' },
+  { id: 6, name: 'Aqua Silk Co-ord', price: 'AED 2,200', category: 'Co-ords', isNew: false,
+    image: 'https://images.unsplash.com/photo-1759825413442-dfcd3449d061?w=400&h=550&fit=crop&q=80' },
+  { id: 7, name: 'Blush Printed Top', price: 'AED 650', category: 'Tops', isNew: false,
+    image: 'https://images.unsplash.com/photo-1767440398636-eb35f46bb342?w=400&h=550&fit=crop&q=80' },
+  { id: 8, name: 'Ivory Crochet Cover-Up', price: 'AED 1,100', category: 'Cover-Ups', isNew: true,
+    image: 'https://images.unsplash.com/photo-1776633734208-3cdf89a7fbf0?w=400&h=550&fit=crop&q=80' },
 ]
 
 const fadeUp = {
@@ -82,7 +90,7 @@ export default function ResortCollection() {
               variants={fadeUp}
               layout
             >
-              <div className="product-image" style={{ background: product.gradient }}>
+              <div className="product-image" style={{ backgroundImage: `url(${product.image})`, backgroundSize: 'cover', backgroundPosition: 'center top' }}>
                 <div className="product-overlay">
                   <button className="quick-view-btn">Quick View</button>
                 </div>

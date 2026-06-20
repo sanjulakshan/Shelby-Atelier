@@ -5,15 +5,24 @@ import '../styles/CollectionPage.css'
 const filters = ['All', 'Classic', 'Embroidered', 'Printed', 'Embellished']
 
 const products = [
-  { id: 1, name: 'Midnight Classic Abaya', price: 'AED 1,800', category: 'Classic', isNew: false, gradient: 'linear-gradient(160deg, #0d0b08 0%, #1a1510 60%, #0d0b08 100%)' },
-  { id: 2, name: 'Gold Thread Abaya', price: 'AED 2,600', category: 'Embroidered', isNew: true, gradient: 'linear-gradient(160deg, #1a1208 0%, #2d2010 50%, #1a1208 100%)' },
-  { id: 3, name: 'Onyx Crystal Abaya', price: 'AED 3,200', category: 'Embellished', isNew: true, gradient: 'linear-gradient(160deg, #1a1a2a 0%, #2d2d3d 50%, #1a1a2a 100%)' },
-  { id: 4, name: 'Ivory Embossed Abaya', price: 'AED 2,800', category: 'Embellished', isNew: true, gradient: 'linear-gradient(160deg, #e8dcc8 0%, #f3e5d8 50%, #d4b8a8 100%)' },
-  { id: 5, name: 'Deep Navy Abaya', price: 'AED 1,950', category: 'Classic', isNew: false, gradient: 'linear-gradient(160deg, #0d1020 0%, #1a1a30 50%, #0d1020 100%)' },
-  { id: 6, name: 'Rose Dust Kaftan Abaya', price: 'AED 2,200', category: 'Printed', isNew: false, gradient: 'linear-gradient(160deg, #d4a0a0 0%, #e8c0b8 50%, #c09090 100%)' },
-  { id: 7, name: 'Sage Linen Abaya', price: 'AED 1,600', category: 'Classic', isNew: false, gradient: 'linear-gradient(160deg, #8a9a80 0%, #a8b898 50%, #788a70 100%)' },
-  { id: 8, name: 'Midnight Blossom Abaya', price: 'AED 2,950', category: 'Embroidered', isNew: true, gradient: 'linear-gradient(160deg, #0d0b18 0%, #1a1525 50%, #0d0b18 100%)' },
-  { id: 9, name: 'Pearl Shimmer Abaya', price: 'AED 3,400', category: 'Embellished', isNew: false, gradient: 'linear-gradient(160deg, #e0d8d0 0%, #f0e8e0 50%, #d0c8c0 100%)' },
+  { id: 1, name: 'Midnight Classic Abaya', price: 'AED 1,800', category: 'Classic', isNew: false,
+    image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&h=550&fit=crop&q=80' },
+  { id: 2, name: 'Gold Thread Abaya', price: 'AED 2,600', category: 'Embroidered', isNew: true,
+    image: 'https://images.unsplash.com/photo-1772474500365-c2c520545f44?w=400&h=550&fit=crop&q=80' },
+  { id: 3, name: 'Onyx Crystal Abaya', price: 'AED 3,200', category: 'Embellished', isNew: true,
+    image: 'https://images.unsplash.com/photo-1772474578035-bebcd90b355d?w=400&h=550&fit=crop&q=80' },
+  { id: 4, name: 'Ivory Embossed Abaya', price: 'AED 2,800', category: 'Embellished', isNew: true,
+    image: 'https://images.unsplash.com/photo-1760083545495-b297b1690672?w=400&h=550&fit=crop&q=80' },
+  { id: 5, name: 'Deep Navy Abaya', price: 'AED 1,950', category: 'Classic', isNew: false,
+    image: 'https://images.unsplash.com/photo-1728487235101-664d87965931?w=400&h=550&fit=crop&q=80' },
+  { id: 6, name: 'Rose Dust Kaftan Abaya', price: 'AED 2,200', category: 'Printed', isNew: false,
+    image: 'https://images.unsplash.com/photo-1752794673269-dc356838c5fd?w=400&h=550&fit=crop&q=80' },
+  { id: 7, name: 'Sage Linen Abaya', price: 'AED 1,600', category: 'Classic', isNew: false,
+    image: 'https://images.unsplash.com/photo-1762376128087-bc29c6df08c0?w=400&h=550&fit=crop&q=80' },
+  { id: 8, name: 'Midnight Blossom Abaya', price: 'AED 2,950', category: 'Embroidered', isNew: true,
+    image: 'https://images.unsplash.com/photo-1772474587292-08b3e8932acd?w=400&h=550&fit=crop&q=80' },
+  { id: 9, name: 'Pearl Shimmer Abaya', price: 'AED 3,400', category: 'Embellished', isNew: false,
+    image: 'https://images.unsplash.com/photo-1736342182213-6c037467cb38?w=400&h=550&fit=crop&q=80' },
 ]
 
 const fadeUp = {
@@ -29,7 +38,7 @@ export default function Abayas() {
   return (
     <main className="collection-page">
       <div className="page-hero">
-        <div className="page-hero-bg" style={{ background: 'linear-gradient(135deg, #0d0b08 0%, #1a1510 50%, #2d2218 100%)' }} />
+        <div className="page-hero-bg" style={{ backgroundImage: 'linear-gradient(rgba(13,11,8,0.72), rgba(26,21,16,0.72)), url(https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1920&h=800&fit=crop&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div className="page-hero-content">
           <motion.span
             className="section-label"
@@ -83,7 +92,7 @@ export default function Abayas() {
               variants={fadeUp}
               layout
             >
-              <div className="product-image" style={{ background: product.gradient }}>
+              <div className="product-image" style={{ backgroundImage: `url(${product.image})`, backgroundSize: 'cover', backgroundPosition: 'center top' }}>
                 <div className="product-overlay">
                   <button className="quick-view-btn">Quick View</button>
                 </div>

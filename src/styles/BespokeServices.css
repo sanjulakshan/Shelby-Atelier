@@ -276,11 +276,23 @@
     display: none;
   }
 
+  .bespoke-process {
+    padding: 4rem 1.5rem;
+  }
+
   .process-steps {
     grid-template-columns: 1fr;
   }
 
+  .bespoke-offerings {
+    padding: 4rem 1.5rem;
+  }
+
   .offerings-grid {
     grid-template-columns: 1fr;
+  }
+
+  .bespoke-cta {
+    padding: 5rem 1.5rem;
   }
 }

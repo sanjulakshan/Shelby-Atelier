@@ -2,18 +2,30 @@ import { motion } from 'framer-motion'
 import '../styles/Lookbook.css'
 
 const looks = [
-  { id: 1, title: 'Desert Dusk', subtitle: 'Look 01', gradient: 'linear-gradient(160deg, #1a1208 0%, #2d1f10 50%, #1a1208 100%)', size: 'tall' },
-  { id: 2, title: 'Golden Hour', subtitle: 'Look 02', gradient: 'linear-gradient(160deg, #c8a870 0%, #e8c890 50%, #a89060 100%)', size: 'wide' },
-  { id: 3, title: 'Midnight Bloom', subtitle: 'Look 03', gradient: 'linear-gradient(160deg, #0d0b18 0%, #1a1525 50%, #0d0b18 100%)', size: 'normal' },
-  { id: 4, title: 'Ivory Reverie', subtitle: 'Look 04', gradient: 'linear-gradient(160deg, #e0d8d0 0%, #f5f0e8 50%, #d0c8c0 100%)', size: 'normal' },
-  { id: 5, title: 'Ember Glow', subtitle: 'Look 05', gradient: 'linear-gradient(160deg, #3d1a08 0%, #5c2810 50%, #2d1208 100%)', size: 'tall' },
-  { id: 6, title: 'Pearl Mist', subtitle: 'Look 06', gradient: 'linear-gradient(160deg, #c8c0b8 0%, #e0d8d0 50%, #b8b0a8 100%)', size: 'normal' },
-  { id: 7, title: 'Obsidian Night', subtitle: 'Look 07', gradient: 'linear-gradient(160deg, #0d0d0d 0%, #1a1a1a 50%, #0d0d0d 100%)', size: 'wide' },
-  { id: 8, title: 'Saffron Dreams', subtitle: 'Look 08', gradient: 'linear-gradient(160deg, #c87020 0%, #e09040 50%, #b86010 100%)', size: 'normal' },
-  { id: 9, title: 'Sage Garden', subtitle: 'Look 09', gradient: 'linear-gradient(160deg, #4a5a40 0%, #6a7a58 50%, #3a4a30 100%)', size: 'tall' },
-  { id: 10, title: 'Azure Horizon', subtitle: 'Look 10', gradient: 'linear-gradient(160deg, #1a2d3d 0%, #283d52 50%, #1a2030 100%)', size: 'normal' },
-  { id: 11, title: 'Rose Quartz', subtitle: 'Look 11', gradient: 'linear-gradient(160deg, #d4a0a0 0%, #e8c0b8 50%, #c09090 100%)', size: 'normal' },
-  { id: 12, title: 'Champagne Toast', subtitle: 'Look 12', gradient: 'linear-gradient(160deg, #d4c8a8 0%, #e8dcb8 50%, #c4b898 100%)', size: 'wide' },
+  { id: 1, title: 'Desert Dusk', subtitle: 'Look 01', size: 'tall',
+    image: 'https://images.unsplash.com/photo-1772474587292-08b3e8932acd?w=600&h=900&fit=crop&q=80' },
+  { id: 2, title: 'Golden Hour', subtitle: 'Look 02', size: 'wide',
+    image: 'https://images.unsplash.com/photo-1776841818483-700f88aace44?w=900&h=600&fit=crop&q=80' },
+  { id: 3, title: 'Midnight Bloom', subtitle: 'Look 03', size: 'normal',
+    image: 'https://images.unsplash.com/photo-1764998112680-2f617dc9be40?w=600&h=700&fit=crop&q=80' },
+  { id: 4, title: 'Ivory Reverie', subtitle: 'Look 04', size: 'normal',
+    image: 'https://images.unsplash.com/photo-1760083545495-b297b1690672?w=600&h=700&fit=crop&q=80' },
+  { id: 5, title: 'Ember Glow', subtitle: 'Look 05', size: 'tall',
+    image: 'https://images.unsplash.com/photo-1774460699436-c408cc1408c3?w=600&h=900&fit=crop&q=80' },
+  { id: 6, title: 'Pearl Mist', subtitle: 'Look 06', size: 'normal',
+    image: 'https://images.unsplash.com/photo-1772474578035-bebcd90b355d?w=600&h=700&fit=crop&q=80' },
+  { id: 7, title: 'Obsidian Night', subtitle: 'Look 07', size: 'wide',
+    image: 'https://images.unsplash.com/photo-1771774470158-2b18c74757f1?w=900&h=600&fit=crop&q=80' },
+  { id: 8, title: 'Saffron Dreams', subtitle: 'Look 08', size: 'normal',
+    image: 'https://images.unsplash.com/photo-1773777498906-bfd9f2271ee1?w=600&h=700&fit=crop&q=80' },
+  { id: 9, title: 'Sage Garden', subtitle: 'Look 09', size: 'tall',
+    image: 'https://images.unsplash.com/photo-1752794673269-dc356838c5fd?w=600&h=900&fit=crop&q=80' },
+  { id: 10, title: 'Azure Horizon', subtitle: 'Look 10', size: 'normal',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=700&fit=crop&q=80' },
+  { id: 11, title: 'Rose Quartz', subtitle: 'Look 11', size: 'normal',
+    image: 'https://images.unsplash.com/photo-1768767112566-dc12dbe40aae?w=600&h=700&fit=crop&q=80' },
+  { id: 12, title: 'Champagne Toast', subtitle: 'Look 12', size: 'wide',
+    image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&h=600&fit=crop&q=80' },
 ]
 
 export default function Lookbook() {
@@ -80,7 +92,7 @@ export default function Lookbook() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: i * 0.04 }}
           >
-            <div className="look-image" style={{ background: look.gradient }}>
+            <div className="look-image" style={{ backgroundImage: `url(${look.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <div className="look-overlay">
                 <span className="look-subtitle">{look.subtitle}</span>
                 <h3 className="look-title">{look.title}</h3>

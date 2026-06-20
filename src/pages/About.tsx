@@ -25,19 +25,19 @@ const team = [
     name: 'Shelby Al Hassan',
     role: 'Founder & Creative Director',
     bio: 'With a background in couture from Paris and roots in Dubai, Shelby established the atelier in 2014 to bridge cultures through fashion.',
-    gradient: 'linear-gradient(160deg, #1a1510 0%, #2d2218 50%, #1a1510 100%)',
+    image: 'https://images.unsplash.com/photo-1772474587292-08b3e8932acd?w=500&h=600&fit=crop&q=80',
   },
   {
     name: 'Nour Khalid',
     role: 'Head of Design',
     bio: 'A graduate of Central Saint Martins, Nour brings a global perspective to every collection — always filtered through a deeply personal aesthetic.',
-    gradient: 'linear-gradient(160deg, #2d2218 0%, #3d2d20 50%, #2d2218 100%)',
+    image: 'https://images.unsplash.com/photo-1752794673269-dc356838c5fd?w=500&h=600&fit=crop&q=80',
   },
   {
     name: 'Fatima Al Rashid',
     role: 'Master Atelier — Embroidery',
     bio: 'With over 20 years of hand-embroidery expertise, Fatima is the soul behind the intricate details that define Shelby Atelier\'s signature pieces.',
-    gradient: 'linear-gradient(160deg, #0d0b08 0%, #1a1510 50%, #0d0b08 100%)',
+    image: 'https://images.unsplash.com/photo-1760083545495-b297b1690672?w=500&h=600&fit=crop&q=80',
   },
 ]
 
@@ -88,6 +88,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1753162657110-753418a3840b?w=700&h=900&fit=crop&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         <motion.div
           className="about-story-content"
@@ -179,7 +180,7 @@ export default function About() {
               viewport={{ once: true }}
               variants={fadeUp}
             >
-              <div className="team-portrait" style={{ background: member.gradient }}>
+              <div className="team-portrait" style={{ backgroundImage: `url(${member.image})`, backgroundSize: 'cover', backgroundPosition: 'center top' }}>
                 <div className="team-portrait-overlay" />
               </div>
               <div className="team-info">

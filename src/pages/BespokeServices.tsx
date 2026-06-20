@@ -121,6 +121,7 @@ export default function BespokeServices() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=700&h=900&fit=crop&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
       </section>
 

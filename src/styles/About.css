@@ -254,8 +254,16 @@
     display: none;
   }
 
+  .about-values {
+    padding: 4rem 1.5rem;
+  }
+
   .values-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-quote {
+    padding: 5rem 1.5rem;
   }
 
   .team-grid {
@@ -263,6 +271,6 @@
   }
 
   .about-team {
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem 5rem;
   }
 }

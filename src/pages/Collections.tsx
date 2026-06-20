@@ -9,7 +9,7 @@ const collections = [
     description: 'Timeless silhouettes crafted in the finest silks, crepes, and embroidered fabrics. Each abaya is a testament to cultural heritage reimagined for the contemporary woman.',
     path: '/abayas',
     count: '24 pieces',
-    gradient: 'linear-gradient(160deg, #0d0b08 0%, #1a1510 50%, #2d2218 100%)',
+    image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&h=1000&fit=crop&q=80',
     accent: 'rgba(212,175,55,0.1)',
   },
   {
@@ -17,7 +17,7 @@ const collections = [
     description: 'Gowns and kaftans designed to command attention. Intricate beadwork, flowing silhouettes, and luxurious fabrics come together for moments that demand presence.',
     path: '/evening-wear',
     count: '18 pieces',
-    gradient: 'linear-gradient(160deg, #2d1f12 0%, #3d2b1f 50%, #1a1208 100%)',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=1000&fit=crop&q=80',
     accent: 'rgba(200,180,140,0.1)',
   },
   {
@@ -25,7 +25,7 @@ const collections = [
     description: 'Effortless luxury for sun-drenched destinations. Lightweight silks, breezy linens, and vibrant prints made for the woman who travels in style.',
     path: '/resort-collection',
     count: '15 pieces',
-    gradient: 'linear-gradient(160deg, #c8b4a0 0%, #e8d8c8 50%, #b8a090 100%)',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=1000&fit=crop&q=80',
     accent: 'rgba(180,160,140,0.2)',
   },
   {
@@ -33,7 +33,7 @@ const collections = [
     description: 'Your vision, our craft. Work one-on-one with our master designers to create a garment that is uniquely and entirely yours — from first sketch to final fitting.',
     path: '/bespoke-services',
     count: 'Custom',
-    gradient: 'linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)',
+    image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&h=1000&fit=crop&q=80',
     accent: 'rgba(212,175,55,0.15)',
   },
 ]
@@ -47,7 +47,7 @@ export default function Collections() {
   return (
     <main className="collections-page">
       <div className="page-hero">
-        <div className="page-hero-bg" style={{ background: 'linear-gradient(135deg, #0d0b08 0%, #1a1510 50%, #2d2218 100%)' }} />
+        <div className="page-hero-bg" style={{ backgroundImage: 'linear-gradient(rgba(13,11,8,0.72), rgba(26,21,16,0.72)), url(https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&h=800&fit=crop&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div className="page-hero-content">
           <motion.span
             className="section-label"
@@ -88,7 +88,7 @@ export default function Collections() {
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <div className="collection-visual" style={{ background: col.gradient }}>
+            <div className="collection-visual" style={{ backgroundImage: `url(${col.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <div className="collection-visual-inner" style={{ background: col.accent }} />
               <span className="collection-count">{col.count}</span>
             </div>
